@@ -31,14 +31,6 @@ jobs:
         with:
           maven-version: '3.9.9'
 
-      # Step 4: Cache Maven dependencies to speed up builds
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
 
       # Step 5: Install dependencies and run tests
       - name: Build and Test with Maven
