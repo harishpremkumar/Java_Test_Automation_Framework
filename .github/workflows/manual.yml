@@ -42,3 +42,4 @@ jobs:
         with:
           name: surefire-reports          # Name of the artifact (you can change it as needed)
           path: target/surefire-reports/  
+          retention-days: 1
