@@ -1,6 +1,6 @@
 name: Java CI with Maven and Selenium Tests
 
-# Trigger the workflow on push or pull request to the main branch
+# Trigger the workflow on push or pull request to the master branch
 on:
   push:
     branches:
@@ -42,3 +42,10 @@ jobs:
       # Step 5: Optionally package the application
       - name: Build with Maven
         run: mvn -B package --file pom.xml  # Create a Maven package (jar, war, etc.)
+
+      # Step 6: Upload Surefire Test Reports as Artifacts
+      - name: Upload Surefire Test Reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: surefire-reports          # Name of the artifact (you can change it as needed)
+          path: target/surefire-reports/  # Path to the test reports (HTML, XML, etc.)
