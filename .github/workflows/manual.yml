@@ -25,12 +25,7 @@ jobs:
           java-version: '17'
           distribution: 'adoptopenjdk'
 
-      # Step 3: Set up Maven (Corrected action)
-      - name: Set up Maven
-        uses: apache/setup-maven@v2
-        with:
-          maven-version: '3.9.9'
-
+    
 
       # Step 5: Install dependencies and run tests
       - name: Build and Test with Maven
