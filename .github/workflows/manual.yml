@@ -25,15 +25,21 @@ jobs:
           java-version: '17'
           distribution: 'adoptopenjdk'
 
-      # Step 3: Set up Maven
+      # Step 3: Set up Maven (Corrected action)
       - name: Set up Maven
-        uses: actions/setup-maven@v2
+        uses: apache/setup-maven@v2
         with:
           maven-version: '3.9.9'
+
+      # Step 4: Cache Maven dependencies to speed up builds
+      - name: Cache Maven dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
       # Step 5: Install dependencies and run tests
       - name: Build and Test with Maven
         run: mvn clean test
-
-      
-
