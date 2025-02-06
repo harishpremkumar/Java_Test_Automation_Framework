@@ -22,7 +22,7 @@ public class webautomation1 {
 
         // Add desired Chrome arguments
         options.addArguments("--disable-gpu");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
         options.addArguments("--disable-dev-shm-usage");

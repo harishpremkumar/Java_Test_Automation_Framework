@@ -21,7 +21,12 @@ public class webautomation {
     public void the_user_is_on_the_login_page() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-gpu", "--start-maximized","--head");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--headless");
+        options.addArguments("--start-maximized");
+        options.addArguments("--incognito");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
     }

@@ -20,14 +20,12 @@ public class webautomation2 {
         // Create a ChromeOptions instance to add arguments
         ChromeOptions options = new ChromeOptions();
 
-        // Add desired Chrome arguments
         options.addArguments("--disable-gpu");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
-
         // Initialize ChromeDriver with options
         driver = new ChromeDriver(options);
     }
