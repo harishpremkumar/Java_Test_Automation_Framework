@@ -3,10 +3,10 @@ name: Java CI with Maven and Selenium Tests
 on:
   push:
     branches:
-      - master
+      - test
   pull_request:
     branches:
-      - master
+      - test
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,3 +43,4 @@ jobs:
           name: surefire-reports          # Name of the artifact (you can change it as needed)
           path: target/surefire-reports/  
           retention-days: 1
+
