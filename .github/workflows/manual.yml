@@ -3,10 +3,10 @@ name: Java CI with Maven and Selenium Tests
 on:
   push:
     branches:
-      - test
+      - master
   pull_request:
     branches:
-      - test
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
